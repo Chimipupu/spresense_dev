@@ -1,28 +1,54 @@
 # Spresense評価用F/W開発
 
-Spresenseの評価用F/W個人開発リポジトリ
+Spresenseの評価用F/W個人開発リポジトリ  
+CXD5602という化け物マルチコアマイコンをいじり倒す!  
 
 ---
 ## CXD5602
 
-- CPU ... Arm Cortex-M4F x6コア
-  - クロック ... 156MHz
-  - FPU ... 単精度
-- ROM ... 8MB
-- SRAM ... 1.5MB
+<!-- <div align="center">
+  <img width="500" src="/doc/CXD5602/cxd5602_block_diagram.png">
+</div> -->
+
+- CPU
+  - アプリ用 ... Arm Cortex-M4F x6コア
+    - クロック ... 156 MHz
+    - FPU ... 単精度
+    - ROM ... 8 MB
+    - SRAM ... 1.5 MB
+  - SYS・I/O用 ... Arm Cortex-M0+ x1コア
+    - クロック ... 100MHz
+    - ROM ... 128 KB
+    - SRAM ... 256 KB
+  - GNSS DSP用 ... Arm Cortex-M4F x1コア
+    - クロック ... 98.208MHz
+    - FPU ... 単精度
+    - ROM ... 64 KB
+    - SRAM ... 640 KB
 
 - 周辺機能
-  - I2C
-  - SPI
-    - メインボード：1系統、最大13Mbps（1.8V）
-    - 拡張ボード：1系統、最大39Mbps（5Vまたは3.3V）
-  - UART
-  - DMA
+  - I2C ... x1 ＠400 KHz
+  - I2S ... x1
+  - SPI ... x2
+  - UART ... x2
+  - SDIO ... x1
+  - eMMC ... x1
+  - USB ... x1
+  - DMA ... x2
+  - GPIO ... x26
+  - ADC ... x2
+  - DMA ... x8
+  - PWM ... x8
   - タイマ
-    - 汎用タイマ（PWM出力対応、最大6.5MHz、15ビット分解能）
-    - システムタイマ（割り込みや周期処理に利用）
+    - 汎用タイマ ... x6
+    - SysTick
   - WDT
   - RTC
+
+## メイン基板(CXD5602PWBMAIN1)
+
+- マイコン ... CXD5602
+- LED ... 緑色 x4つ
 
 ---
 
