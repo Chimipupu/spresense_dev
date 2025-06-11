@@ -1,13 +1,24 @@
 /**
- * @brief SPRESENSE Arduino IDEファイル
+ * @brief SPRESENSEのArduinoIDEファイル
  * @author Chimipupu(https://github.com/Chimipupu)
  * @date 2025-06-11
  * @version 1.0
- * @note SPRESENSE 評価F/W開発
+ * @note SPRESENSE メインCPUコア用
  */
+
+#include <MP.h> // MultiCore MPライブラリ
+#ifdef SUBCORE
+#error "You must select MainCore"
+#endif
+
+#include "mp_cpu.hpp"
+
+#include <stdint.h>
+#include <string.h>
 
 // ARM Cortex-M4F用のNOP命令のマクロ
 #define NOP() __asm__ __volatile__("nop")
+#if 0
 static void blink_led(void);
 
 static void blink_led(void)
@@ -26,9 +37,13 @@ static void blink_led(void)
     digitalWrite(LED3, LOW);
     delay(500);
 }
+#endif
 
 void setup()
 {
+    // サブCPUコアの開始
+    mp_sub_cpu_core_begin();
+
     // GPIO初期化
     pinMode(LED0, OUTPUT);
     pinMode(LED1, OUTPUT);
@@ -36,7 +51,7 @@ void setup()
     pinMode(LED3, OUTPUT);
 
     // UART初期化
-    Serial.begin(115200);
+    Serial.begin(115200, SERIAL_8E1);
     while (!Serial) {
         NOP();
     }
@@ -44,7 +59,6 @@ void setup()
 
 void loop()
 {
-    blink_led();
-
-    Serial.println("Hello! Spresense CXD5602!");
+    MPLog("Spresense CXD5602 Main CPU Core!\r\n");
+    delay(1000);
 }
