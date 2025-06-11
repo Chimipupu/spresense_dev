@@ -4,28 +4,28 @@ Spresenseの評価用F/W個人開発リポジトリ
 
 ---
 
-## 実装機能
+## 実装機能💻️
 
 <div align="center">
   <img width="300" src="/doc/img/spresense_mp_multi_core_cpu_com.png">
 </div>
 
-- メインCPU
-  - Sub CPU Core 1～5の起動
-- Sub CPU Core 1
-  - LED0のON/OFF
-- Sub CPU Core 2
-  - LED1のON/OFF
-- Sub CPU Core 3
-  - LED2のON/OFF
-- Sub CPU Core 4
-  - LED3のON/OFF
-- Sub CPU Core 5
+- **メインCPU👑**
+  - Sub CPU Core 1～5の起動📢
+- **Sub CPU Core 1**🚸
+  - LED0のON/OFF💡
+- **Sub CPU Core 2**🚸
+  - LED1のON/OFF💡
+- **Sub CPU Core 3**🚸
+  - LED2のON/OFF💡
+- **Sub CPU Core 4**🚸
+  - LED3のON/OFF💡
+- **Sub CPU Core 5**🚸
   - (TBD)
 
 ---
 
-## CXD5602
+## CXD5602⚡️
 
 この化け物マルチコアマイコンをいじり倒したい🥺  
 
@@ -46,25 +46,25 @@ Spresenseの評価用F/W個人開発リポジトリ
     - SRAM ... 640 KB
 
 - 周辺機能
-  - I2C ... x5
-  - I2S ... x2
-  - SPI ... x4
-  - UART ... x3
-  - SDIO ... x1
-  - eMMC ... x1
-  - USB ... x1
-  - DMA ... x2
-  - GPIO ... x26
-  - ADC
+  - ⚡️I2C ... x5
+  - ⚡️I2S ... x2
+  - ⚡️SPI ... x4
+  - ⚡️UART ... x3
+  - ⚡️SDIO ... x1
+  - ⚡️eMMC ... x1
+  - ⚡️USB ... x1
+  - ⚡️DMA ... x2
+  - ⚡️GPIO ... x26
+  - ⚡️ADC
     - Low ... x4 10bit
     - High ... x2 10bit
-  - DMA ... x8
-  - PWM ... x8
-  - タイマ
+  - ⚡️DMA ... x8
+  - ⚡️PWM ... x8
+  - ⏰️タイマ
     - 汎用タイマ ... x6
     - SysTick
-  - WDT
-  - RTC
+  - ⏰️WDT
+  - ⏰️RTC
 
 ## メイン基板(CXD5602PWBMAIN1)
 
